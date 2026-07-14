@@ -104,11 +104,21 @@ A secondary anomaly surfaced during the analysis: **MA** state shows the highest
 
 ## Dashboard
 
+**[Live dashboard →](https://datastudio.google.com/reporting/31fb1151-76b7-4e40-a7c5-b8cef5fb434a)**
+
 The Looker Studio dashboard (`Olist Beauty & Health — State Performance Overview`) provides:
 
 - A geo map sized by `revenue_per_seller`
 - KPI scorecards: total revenue, seller count, average review score, late-delivery rate
 - A ranked, filterable state-level table (revenue per seller, avg. price, avg. review, late-delivery %)
+
+<p align="center">
+  <img src="docs/images/dashboard_map_overview.png" alt="State-level geo map and KPI scorecards" width="800"/>
+</p>
+
+<p align="center">
+  <img src="docs/images/dashboard_state_table.png" alt="Ranked state performance table" width="800"/>
+</p>
 
 ## Repository Structure
 
