@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: mart_state_performance
+    description: >
+      health_beauty 品類的州別績效總表，整合效率、定價、服務品質、配送效率四個維度，
+      用於「排除法」分析地區表現差異的根因。is_reliable_sample 欄位標註樣本量是否足夠(review_count >= 20)，
+      Looker 呈現時對不可靠樣本應加註或降低視覺權重。
+    columns:
+      - name: seller_state
+        description: 賣家所在州
+        tests:
+          - unique
+          - not_null
+      - name: revenue_per_seller
+        description: 平均每個賣家帶來的營收，核心效率指標
+      - name: is_reliable_sample
+        description: review_count >= 20 才視為統計上可靠的評分樣本
+
+  - name: mart_monthly_category_trends
+    description: >
+      health_beauty 品類月度銷售與鋪貨量趨勢，分析區間為 2017-01 ~ 2018-08（已排除不完整月份）。
+      包含 lag features 供下游 Python 預測模型使用。
+    columns:
+      - name: order_month
+        description: 訂單月份（月初）
+        tests:
+          - unique
+          - not_null
+      - name: revenue_per_sku
+        description: 每個SKU帶來的營收，用於偵測鋪貨邊際效益是否遞減

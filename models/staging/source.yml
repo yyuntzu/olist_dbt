@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    database: focus-heuristic-438521-v4
+    schema: olist_raw
+    tables:
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: sellers
+      - name: customers
+      - name: category_translation
+      - name: geolocation
+      - name: olist_order_reviews_clean
+      - name: customers
+        identifier: olist_order_reviews_clean
